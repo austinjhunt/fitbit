@@ -16,34 +16,26 @@ public class Altitude {
 	}
 
 	public String takeMeasurement(){
-		altitudeList.add((int) (seedValue + Math.random() * 100));
-		return "Current Altitude: " + altitudeList.get(altitudeList.size()-1) + "ft.\n"
-				+ "Flights of Stairs Climbed: " + this.getStairCount();
+		altitudeList.add((int) (seedValue + Math.random() * 10));
+		return "Current Altitude: " + altitudeList.get(altitudeList.size()-1) + "ft.\n";
+				
 	}
 
 	public String getLastReading(){
 		return this.takeMeasurement();
 	}
+        
 
 	public int getStairCount(){
 		int measurementDiff;
+                altitudeList.add((int) (seedValue + Math.random() * 100));
 		for (int i = 1; i < altitudeList.size(); i++) {
 			measurementDiff = (altitudeList.get(i) - altitudeList.get(i - 1));
 			if (measurementDiff > 0){
 				stairCount = stairCount + measurementDiff;
 			}
 		}
-		return (stairCount/10);
+		return (stairCount/20);
 	}
-
-	/*
-	private archive(){
-		
-	}
-	
-	private reset(){
-		
-	}
-	*/
 
 }

@@ -27,13 +27,4 @@ public class SleepCycle {
 		
 	}
 	
-	//Write to a file? Like a report of what happened when the program was running?
-	private void archive(){
-		
-	}
-	
-	//Unnecessary method? startTime and endTime can just be overwritten
-	private void reset(){
-		
-	}
 }

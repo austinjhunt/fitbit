@@ -1,16 +1,27 @@
 
 package fitbitproject;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
+
 
 public class ButtonListener {
 	private Altitude altitude;
 	private StepCount stepCount;
 	private SleepCycle sleepCycle;
-
+        DateTimeFormatter formatter;
+        Instant instant; 
+        
+        
+        /* Constructor that uses user-input weight, height, and age; yet to be implemented*/ 
 	public ButtonListener(double w, double h, int a){
 		altitude = new Altitude();
 		stepCount = new StepCount(w,h,a);
 		sleepCycle = new SleepCycle();
+                
 	}
 	
         public ButtonListener(){
@@ -19,20 +30,25 @@ public class ButtonListener {
             stepCount = new StepCount(); 
         }
         
-	public void buttonSignal(String btnType){
-		
-	}
+        public String displayTime() { 
+            instant = instant.now();
+            formatter = DateTimeFormatter.ofLocalizedDateTime( FormatStyle.SHORT )
+                     .withLocale( Locale.UK )
+                     .withZone( ZoneId.systemDefault() );
+            String output = formatter.format(instant);
+            return output;
+        }
 	
-	public void trackSteps(){
-		stepCount.setStepCountValue((int)(Math.random()*100) + 1);
-	}
+	
+	
 	
 	public int displaySteps(){
-                trackSteps();
+                stepCount.setStepCountValue((int)(Math.random()*100) + 1);
 		return stepCount.getStepCountValue();
 	}
 	
 	public double displayCalories(){
+                stepCount.setStepCountValue((int)(Math.random()*100) + 1);
 		return stepCount.calculateCalories();
 	}
 	
@@ -49,5 +65,13 @@ public class ButtonListener {
 		return sleepCycle.calculateSleepDuration();
 	}
 	
-	public String displayCurrentAltitude(){ return altitude.getLastReading(); }
+	public String displayCurrentAltitude(){ 
+            return altitude.getLastReading(); 
+        }
+        
+        public int displayStairCount() {
+            return altitude.getStairCount();
+        }
+        
+        
 }

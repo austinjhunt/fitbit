@@ -1,5 +1,6 @@
 package fitbitproject;
-
+/* This class was used for testing purposes. It does not play a role in the functionality 
+of our project.*/ 
 
 import java.util.*;
 import java.time.*;
@@ -34,13 +35,13 @@ public class Runner {
 	   System.out.println("Step count: " + bl.displaySteps());
 	   System.out.println("Calorie count: " + bl.displayCalories());
 	   */
-		
+		/* 
 		ButtonListener bl = new ButtonListener(52,165,20);
 		bl.trackSteps();
 		bl.trackSteps();
 		bl.trackSteps();
 		System.out.println(bl.displaySteps());
-		
+		*/ 
 		/*
 		 * Testing SleepCycle
 		ButtonListener bl = new ButtonListener(52,165,20);

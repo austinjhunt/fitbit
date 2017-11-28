@@ -163,7 +163,7 @@ public class FitbitUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String stairOutput = "" + bL.displayStairCount();// TODO add your handling code here:
-        jTextArea1.setText(stairOutput);
+        jTextArea1.setText("You've climbed " + stairOutput + " flights of stairs.");
         String dateTime = bL.displayTime();
         jLabel1.setText(dateTime);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -173,17 +173,19 @@ public class FitbitUI extends javax.swing.JFrame {
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         String stepOutput = "" + bL.displaySteps();
-        jTextArea1.setText(stepOutput);
+        jTextArea1.setText("You've taken " + stepOutput + " steps.");
         String dateTime = bL.displayTime();
         jLabel1.setText(dateTime);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         bL.startSleep();
+        jTextArea1.setText("Wow. Of course you're sleeping.");
         jButton1.setEnabled(false);
         jButton2.setEnabled(false);
         jButton3.setEnabled(false);
         jButton4.setEnabled(false);
+        jButton6.setEnabled(false);
         jButton5.setEnabled(true);
         String dateTime = bL.displayTime();
         jLabel1.setText(dateTime);
@@ -191,6 +193,7 @@ public class FitbitUI extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         bL.endSleep();
+        jTextArea1.setText("Well it's about time.");
         String duration = bL.displaySleepDuration();
         String[] timeSplit = duration.split(":");
         
@@ -201,6 +204,7 @@ public class FitbitUI extends javax.swing.JFrame {
         jButton3.setEnabled(true);
         jButton4.setEnabled(true);
         jButton5.setEnabled(false);
+        jButton6.setEnabled(true);
         String dateTime = bL.displayTime();
         jLabel1.setText(dateTime);
         
@@ -208,7 +212,7 @@ public class FitbitUI extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         String caloriesOutput = "" +  (int)bL.displayCalories() + " calories";
-        jTextArea1.setText(caloriesOutput);// TODO add your handling code here:
+        jTextArea1.setText("You've burned " + caloriesOutput);// TODO add your handling code here:
         String dateTime = bL.displayTime();
         jLabel1.setText(dateTime);
     }//GEN-LAST:event_jButton6ActionPerformed

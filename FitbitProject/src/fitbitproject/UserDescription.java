@@ -38,7 +38,7 @@ public class UserDescription {
 	}
 	
 	//In charge of updating calorieConversionFactor when the constructor or setters are called
-	private void calculateCalorieConversionFactor(){
+	void calculateCalorieConversionFactor(){
 		calorieConversionFactor = (10 * weight + 6.25 * height - 5 * age + 5) / 1000 ; //Basal metabolic rate for men
 	}
 	

@@ -18,6 +18,14 @@ public class SleepCycle {
 		endTime = Instant.now();
 	}
 	
+	public Instant getStartTime() {
+		return startTime;
+	}
+
+	public Instant getEndTime() {
+		return endTime;
+	}
+
 	//Returns hours:minutes:seconds
 	public String calculateSleepDuration(){
 		int hours = (int) ChronoUnit.HOURS.between(this.startTime, this.endTime);

@@ -35,6 +35,11 @@ public class Runner {
 	   System.out.println("Step count: " + bl.displaySteps());
 	   System.out.println("Calorie count: " + bl.displayCalories());
 	   */
+		
+		ButtonListener bl = new ButtonListener();
+		System.out.println(bl.displayCalories());
+		
+		
 		/* 
 		ButtonListener bl = new ButtonListener(52,165,20);
 		bl.trackSteps();
